@@ -7,7 +7,7 @@ const publications = [
         { name: "Project", url: "https://elerac.github.io/projects/eventellipsometer/" },
         { name: "Paper", url: "https://arxiv.org/pdf/2411.17313" },
       ],
-      thumbnail: "./assets/thumbnail_cvpr2025_ryota.png"
+      thumbnail: "assets/thumbnail_cvpr2025_ryota.png"
     },
     {
       title: "Spectral and Polarization Vision: Spectro-polarimetric Real-world Dataset",
@@ -18,15 +18,15 @@ const publications = [
         { name: "Paper", url: "https://arxiv.org/pdf/2311.17396" },
         { name: "Dataset", url: "https://huggingface.co/datasets/jyj7913/spectro-polarimetric" }
       ],
-      thumbnail: "./assets/thumbnail_cvpr2024_jeon.png"
+      thumbnail: "assets/thumbnail_cvpr2024_jeon.png"
     }
   ];
-  
-  function renderPublications() {
+
+  function renderPublicationList() {
     const pubList = document.getElementById('publication-list');
     publications.forEach(p => {
       const el = document.createElement('div');
-      el.className = 'publication';
+      el.className = 'publication-list';
       el.innerHTML = `
         <div style="display: flex; align-items: flex-start; flex-wrap: wrap;">
           <div style="flex: 1; min-width: 250px;">
@@ -40,9 +40,34 @@ const publications = [
           </div>
         </div>
       `;
-      pubList.appendChild(el);
+      pubList?.appendChild(el);
+    });
+  }
+
+  function renderPublicationArray() {
+    const pubArray = document.getElementById('publication-array');
+    publications.forEach(p => {
+      const el = document.createElement('div');
+      el.className = 'publication-array';
+      el.innerHTML = `
+        <div>
+          <div>
+            <div style="min-width: 250px;">
+              <img src="${p.thumbnail}" style="width: 100%; max-width: 200px;">
+            </div>
+            <div style="min-width: 200px;">
+              <div class="publication-title">${p.title}</div>
+              <div class="sub">${p.authors}</div>
+              <div class="sub">${p.venue}</div>
+              <div class="publication-links">[${p.links.map(l => `<a href="${l.url}">${l.name}</a>`).join('] [')}]</div>
+            </div>
+          </div>
+        </div>
+      `;
+      pubArray?.appendChild(el);
     });
   }
   
-  renderPublications();
+  renderPublicationList();
+  renderPublicationArray();
   
