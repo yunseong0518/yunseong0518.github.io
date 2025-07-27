@@ -1,12 +1,12 @@
 const works = [
     {
       title: "Part-time Software Engineer",
-      company: "Sketchsoft Inc., Seoul, Republic of Korea",
+      company: "<a href='https://www.sketchsoft3d.com/'>Sketchsoft Inc.</a>, Seoul, Republic of Korea",
       date: "2022. 09. - 2023. 08.",
     },
     {
       title: "Full-time Software Engineer",
-      company: "Sketchsoft Inc., Seoul, Republic of Korea",
+      company: "<a href='https://www.sketchsoft3d.com/'>Sketchsoft Inc.</a>, Seoul, Republic of Korea",
       date: "2022. 01. - 2022. 07.",
     },
     {

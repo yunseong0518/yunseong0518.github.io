@@ -28,11 +28,11 @@ const publications = [
       const el = document.createElement('div');
       el.className = 'publication-list';
       el.innerHTML = `
-        <div style="display: flex; align-items: flex-start; flex-wrap: wrap;">
-          <div style="flex: 1; min-width: 250px;">
-            <img src="${p.thumbnail}" style="width: 100%; max-width: 200px;">
+        <div class="photo-with-text">
+          <div class="photo">
+            <img src="${p.thumbnail}">
           </div>
-          <div style="flex: 2; min-width: 200px;">
+          <div class="text">
             <div class="publication-title">${p.title}</div>
             <div class="sub">${p.authors}</div>
             <div class="sub">${p.venue}</div>
@@ -52,10 +52,10 @@ const publications = [
       el.innerHTML = `
         <div>
           <div>
-            <div style="min-width: 250px;">
-              <img src="${p.thumbnail}" style="width: 100%; max-width: 200px;">
-            </div>
             <div style="min-width: 200px;">
+              <img src="${p.thumbnail}" style="width: 100%;">
+            </div>
+            <div style="min-width: 250px;">
               <div class="publication-title">${p.title}</div>
               <div class="sub">${p.authors}</div>
               <div class="sub">${p.venue}</div>

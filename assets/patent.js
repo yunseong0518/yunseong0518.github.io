@@ -13,11 +13,11 @@ const patents = [
       const el = document.createElement('div');
       el.className = 'patent';
       el.innerHTML = `
-      <div style="display: flex; align-items: flex-start; flex-wrap: wrap;">
-        <div style="flex: 1; min-width: 250px;">
-          <img src="${p.thumbnail}" style="width: 100%; max-width: 200px;">
+      <div class="photo-with-text">
+        <div class="photo">
+          <img src="${p.thumbnail}">
         </div>
-        <div style="flex: 2; min-width: 200px;">
+        <div class="text">
           <div class="patent-title">${p.title}</div>
           <div class="sub">Patent No. ${p.no}</div>
           <div class="sub">Date of Registration: ${p.date}</div>   

@@ -1,11 +1,11 @@
 body {
-    margin: 0;
     margin-top: 5rem;
-    padding: 0rem, 2rem, 2rem, 2rem;
+    margin-bottom: 5rem;
+    padding: 0rem 1rem 1rem 1rem;
     font-family: sans-serif;
     background: #fff;
     color: #111;
-    min-width: 600px;
+    min-width: 300px;
     max-width: 760px;
     margin-left: auto;
     margin-right: auto;
@@ -18,6 +18,7 @@ header {
   
 h1 {
     font-size: 2rem;
+    margin-top: 0;
     margin-bottom: 0.2rem;
 }
     
@@ -39,7 +40,7 @@ h2 {
 }
 
 header {
-    min-width: 600px;
+    min-width: 300px;
     padding: 1rem;
     position: fixed;
     top: 0;
@@ -49,11 +50,39 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 2rem;
     flex-wrap: warp;
     z-index: 1000;
     background-color: rgb(197, 198, 202);
     color: black;
+}
+
+.photo-with-text {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.photo {
+    flex: 1;
+    min-width: 200px;
+}
+
+.photo img {
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#profile img {
+    max-width: 200px;
+}
+
+.text {
+    flex: 2;
+    min-width: 250px;
 }
 
 .educations {
@@ -67,9 +96,23 @@ header {
 
 a {
     color: inherit;
+    text-decoration: underline;
+}
+
+a .header-page {
     text-decoration: none;
 }
 
-a:hover {
-    text-decoration: underline;
+@media (max-width: 450px) {
+    .publication-array {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 451px) {
+    .publication-array {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
