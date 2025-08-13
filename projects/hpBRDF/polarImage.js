@@ -1,4 +1,8 @@
 const polarImages = [
+    { name: "Aluminium" },
+    { name: "SUJ2" },
+    { name: "Fake gold" },
+    { name: "Black glass" },
     { name: "White Billiard" },
     { name: "White smooth plastic" },
     { name: "White rough plastic" },
@@ -7,23 +11,40 @@ const polarImages = [
     { name: "Red rough plastic" },
     { name: "Yellow rough plastic" },
     { name: "Plum rough plastic" },
-    { name: "Aluminium" },
-    { name: "Fake gold" },
-    { name: "SUJ2" },
-    { name: "Black glass" },
-    { name: "Gray silicon" },
     { name: "Green silicon" },
+    { name: "Gray silicon" },
 ]
 
 function renderPolarImage() {
     const polarImageList = document.getElementById('polar-image-list');
-    const container = document.createElement('div')
-    container.className = 'polar-image-container'
-    polarImageList.appendChild(container)
+    const imageContainer = document.createElement('div')
+    imageContainer.className = 'polar-image-container'
+    polarImageList.appendChild(imageContainer)
+
+    const materialName = document.createElement('div')
+    materialName.className = 'polar-image-name'
+    polarImageList.appendChild(materialName)
+
+    const thumbnailViewer = document.createElement('div')
+    thumbnailViewer.className = 'polar-image-thumbnail-list'
 
     let pos_vertical = 0;
     let pos_horizontal = 0;
-        
+    let current = 0;
+
+    polarImages.forEach((p, idx) => {
+        const thumbnail = document.createElement('div');
+        thumbnail.className = 'thumbnail';
+        const img_thumbnail = document.createElement('img');
+        img_thumbnail.src = `assets/${p.name}_srgb.png`;
+        thumbnail.appendChild(img_thumbnail);
+        thumbnailViewer.appendChild(thumbnail);
+        thumbnail.onmousedown = () => {
+            current = idx
+            showSelected(idx)
+        }
+    })
+
     polarImages.forEach(p => {
         const el = document.createElement('div');
         el.classList = ['polar-image']
@@ -69,7 +90,7 @@ function renderPolarImage() {
         handle.className = 'slider-handle';
         el.appendChild(handle);
         
-        container.appendChild(el);
+        imageContainer.appendChild(el);
         
         const rectOf = () => el.getBoundingClientRect();
 
@@ -86,13 +107,30 @@ function renderPolarImage() {
         };
     });
 
-    let current = 0;
+    const controller = document.createElement('div')
+    controller.className = 'polar-image-controller'
+    const prevButton = document.createElement('button')
+    prevButton.className = 'prev'
+    const nextButton = document.createElement('button')
+    nextButton.className = 'next'
+
+    nextButton.innerHTML = '>';
+    prevButton.innerHTML = '<';
+
+    polarImageList.append(controller)
+    imageContainer.append(prevButton)
+    controller.append(thumbnailViewer)
+    imageContainer.append(nextButton)
 
     function showSelected(idx) {
-        console.log('show', idx)
+        materialName.textContent = `${polarImages[idx].name}`
         views = document.querySelectorAll('.polar-image');
         views.forEach((view, i) => {
             view.classList.toggle('active', i === idx)
+        })
+        thumbnails = document.querySelectorAll('.thumbnail');
+        thumbnails.forEach((thumbnail, i) => {
+            thumbnail.classList.toggle('active', i === idx)
         })
         updateSlider()
     }
@@ -111,8 +149,8 @@ function renderPolarImage() {
         top.style.clipPath = `inset(0px 0px 0px ${pos_vertical}px`;
         slider_vertical.style.left = `${pos_vertical}px`
         slider_horizontal.style.top = `${pos_horizontal}px`
-        handle.style.left = `${pos_vertical}px`
-        handle.style.top = `${pos_horizontal}px`
+        handle.style.left = `${pos_vertical - 12}px`
+        handle.style.top = `${pos_horizontal - 12}px`
     }
 
     function initSlider() {
@@ -120,12 +158,10 @@ function renderPolarImage() {
         pos_horizontal = activeImage.clientHeight / 2;
         pos_vertical = activeImage.clientWidth / 2;
         updateSlider();
-        console.log('initSlider')
     }
 
     function initViewer() {
-        startAutoView()
-        showSelected(0)
+        showSelected(current)
         initSlider();
     }
 
@@ -134,9 +170,13 @@ function renderPolarImage() {
         showSelected(current)
     }
 
-    function startAutoView() {
-        interval = setInterval(nextView, 3000); // 3초마다 자동 전환
+    function prevView() {
+        current = (current + 1) % views.length;
+        showSelected(current)
     }
+
+    nextButton.addEventListener('click', nextView)
+    prevButton.addEventListener('click', prevView)
     window.addEventListener('load', initViewer);
 }
 
