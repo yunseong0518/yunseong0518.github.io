@@ -59,6 +59,9 @@ function renderPolarImage() {
 
         const aolp = document.createElement('div');
         aolp.className = 'aolp';
+        const label_aolp = document.createElement('span');
+        label_aolp.innerText = 'AoLP';
+        aolp.appendChild(label_aolp);
         const img_aolp = document.createElement('img');
         img_aolp.src = `assets/${p.name}_aolp.png`;
         aolp.appendChild(img_aolp);
@@ -66,13 +69,19 @@ function renderPolarImage() {
         
         const top = document.createElement('div');
         top.className = 'top';
+        const label_top = document.createElement('span');
+        label_top.innerText = 'ToP';
+        top.appendChild(label_top);
         const img_top = document.createElement('img');
         img_top.src = `assets/${p.name}_top.png`;
         top.appendChild(img_top);
         el.appendChild(top);
-
+        
         const dop = document.createElement('div');
         dop.className = 'dop';
+        const label_dop = document.createElement('span');
+        label_dop.innerText = 'DoP';
+        dop.appendChild(label_dop);
         const img_dop = document.createElement('img');
         img_dop.src = `assets/${p.name}_dop.png`;
         dop.appendChild(img_dop);
@@ -94,16 +103,45 @@ function renderPolarImage() {
         
         const rectOf = () => el.getBoundingClientRect();
 
-        handle.onmousedown = () => {
+        handle.onmousedown = (e) => {
+            e.preventDefault();
             const onMove = (e) => {
-                const r = rectOf();
-                pos_vertical = Math.min(el.clientWidth, Math.max(0, e.clientX - r.left));
-                pos_horizontal = Math.min(Math.max(0, e.clientY - r.top), el.offsetHeight);
-                updateSlider();
+            const r = rectOf();
+            const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+            const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+            pos_vertical = Math.min(el.clientWidth, Math.max(0, clientX - r.left));
+            pos_horizontal = Math.min(Math.max(0, clientY - r.top), el.offsetHeight);
+            updateSlider();
             };
-            const stop = () => { window.removeEventListener('mousemove', onMove); window.removeEventListener('mouseup', stop); };
+            const stop = () => {
+            window.removeEventListener('mousemove', onMove);
+            window.removeEventListener('mouseup', stop);
+            window.removeEventListener('touchmove', onMove);
+            window.removeEventListener('touchend', stop);
+            };
             window.addEventListener('mousemove', onMove);
             window.addEventListener('mouseup', stop);
+            window.addEventListener('touchmove', onMove);
+            window.addEventListener('touchend', stop);
+        };
+        handle.ontouchstart = (e) => {
+            e.preventDefault();
+            const onMove = (e) => {
+            const r = rectOf();
+            const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+            const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+            pos_vertical = Math.min(el.clientWidth, Math.max(0, clientX - r.left));
+            pos_horizontal = Math.min(Math.max(0, clientY - r.top), el.offsetHeight);
+            updateSlider();
+            };
+            const stop = () => {
+            window.removeEventListener('mousemove', onMove);
+            window.removeEventListener('mouseup', stop);
+            window.removeEventListener('touchmove', onMove);
+            window.removeEventListener('touchend', stop);
+            };
+            window.addEventListener('touchmove', onMove);
+            window.addEventListener('touchend', stop);
         };
     });
 
