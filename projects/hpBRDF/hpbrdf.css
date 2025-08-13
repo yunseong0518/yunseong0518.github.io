@@ -1,0 +1,131 @@
+header {
+    min-width: 300px;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: warp;
+    z-index: 1000;
+    background-color: rgb(197, 198, 202);
+    color: black;
+    margin-bottom: 2rem;
+}
+
+body {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    padding: 0rem 1rem 1rem 1rem;
+    font-family: sans-serif;
+    background: #fff;
+    color: #111;
+    min-width: 300px;
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 0.2rem;
+}
+    
+h2 {
+    color: #111;
+    margin-top: 2rem;
+}
+
+.publish {
+    display: flex;
+    justify-self: center;
+    margin-bottom: 1rem
+}
+
+.author-list {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 0.5rem
+}
+
+.institution-list {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 0.5rem
+}
+
+.link-list {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 0.5rem
+}
+
+.abstract {
+    margin-bottom: 2rem;
+}
+
+.acquisition-setup img {
+    max-width: 100%;
+}
+.teaser img {
+    max-width: 100%;
+}
+
+#header-page {
+    margin-right: 1rem;
+}
+
+img {
+    user-drag: none;          
+    -webkit-user-drag: none;
+    user-select: none;
+    pointer-events: none;
+}
+#polar-image-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.polar-image { position: relative; max-width: 500px; max-height: 500px; width: 100%; height: 100% }
+.polar-image .srgb {position: relative}
+.polar-image .aolp { position: absolute; inset: 0; }
+.polar-image .dop { position: absolute; inset: 0; }
+.polar-image .top { position: absolute; inset: 0; }
+.polar-image img { width: 100%; height: auto; display: block; }
+
+.slider-vertical   { position: absolute; top: 0; width: 3px; height: 100%; background: gray; }
+.slider-horizontal { position: absolute; left: 0; height: 3px; width: 100%; background: gray; }
+.slider-handle { position: absolute; top: 0; left: 0; width: 10px; height: 10px; background: gray}
+
+.sub {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+a .header-page {
+    text-decoration: none;
+}
+
+@media (max-width: 450px) {
+    .publication-array {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 451px) {
+    .publication-array {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

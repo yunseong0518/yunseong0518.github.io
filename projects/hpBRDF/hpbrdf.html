@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyperspectral Polarimetric BRDFs of Real-world Materials</title>
+    <link rel="stylesheet" href="./hpbrdf.css">
+    <script defer src="./polarImage.js"></script>
+    </head>
+<body>
+    <header>
+        <div></div>
+    </header>
+    <section>
+        <div class="title">
+            <h1>Hyperspectral Polarimetric BRDFs of Real-world Materials</h1>
+        </div>
+        <div class="author-list">
+            <div>Yunseong Moon<sup>1</sup></div>
+            <div>Ryota Maeda<sup>1,2</sup></div>
+            <div>Suhyun Shin<sup>1</sup></div>
+            <div>Inseung Hwang<sup>3</sup></div>
+            <div>Min H. Kim<sup>3</sup></div>
+            <div>Seung-Hwan Baek<sup>1</sup></div>
+        </div>
+        <div class="institution-list">
+            <div><sup>1</sup>POSTECH</div>
+            <div><sup>2</sup>University of Hyogo</div>
+            <div><sup>3</sup>KAIST</div>
+        </div>
+        <div class="publish">
+            <div>SIGGRAPH Asia 2025</div>
+        </div>
+        <div class="link-list">
+            <div class="link">[<a>paper</a>]</div>
+            <div class="link">[<a>dataset</a>]</div>
+            <div class="link">[<a>code</a>]</div>
+        </div>
+    </section>
+    <section class="teaser">
+        <img src="assets/teaser.png">
+    </section>
+    <h2>Abstract</h2>
+    <section class="abstract">
+        <div>
+            Acquiring bidirectional reflectance distribution functions (BRDFs) is essential for simulating light transport and analytically modeling material properties. 
+            Over the past two decades, numerous intensity-only BRDF datasets in the visible spectrum have been introduced, primarily for RGB image rendering applications. 
+            However, in scientific and engineering domains, there remains an unmet need to model light transport with polarization-a fundamental wave property of light-across hyperspectral bands.
+            To address this gap, we present the first hyperspectral-polarimetric BRDF (hpBRDF) dataset of real-world materials, spanning wavelengths from 414 to 950nm and densely sampled at 68 spectral bands. 
+            This dataset covers both the visible and near-infrared (NIR) spectra, enabling detailed material analysis and light reflection simulations that incorporate polarization at each narrow spectral band.
+            We develop an efficient hpBRDF acquisition system that captures high-dimensional hpBRDFs within a practical acquisition time. 
+            Using this system, we demonstrate hyperspectral-polarimetric rendering using the acquired hpBRDFs.
+            To provide insights on hpBRDF, we analyze the hpBRDFs with respect to their dependencies on wavelength, polarization state, material type, and illumination/viewing geometry. 
+            Also, we propose compact representations through principal component analysis and implicit neural hpBRDF modeling.
+        </div>
+    </section>
+    <h2>Acquisition Setup</h2>
+    <section class="acquisition-setup">
+        <div class="acquisition-setup">
+            <img src="assets/acquisition_setup.png">
+        </div>
+    </section>
+    <h2>Dataset Preview</h2>
+    <section id="polar-image-list"></section>
+</body>
+</html>
