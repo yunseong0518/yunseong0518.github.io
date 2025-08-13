@@ -17,9 +17,16 @@ const polarImages = [
 
 function renderPolarImage() {
     const polarImageList = document.getElementById('polar-image-list');
+    const container = document.createElement('div')
+    container.className = 'polar-image-container'
+    polarImageList.appendChild(container)
+
+    let pos_vertical = 0;
+    let pos_horizontal = 0;
+        
     polarImages.forEach(p => {
         const el = document.createElement('div');
-        el.className = `polar-image`;
+        el.classList = ['polar-image']
         el.id = `${p.name}`;
 
         const srgb = document.createElement('div');
@@ -62,28 +69,7 @@ function renderPolarImage() {
         handle.className = 'slider-handle';
         el.appendChild(handle);
         
-        polarImageList.appendChild(el);
-
-        window.addEventListener('load', initSlider);
-
-        let pos_vertical = el.clientHeight / 2;
-        let pos_horizontal = el.clientWidth / 2;
-        
-        function updateSlider() {
-            aolp.style.clipPath = `inset(${pos_horizontal}px 0px 0px 0px)`;
-            dop.style.clipPath = `inset(0px 0px ${el.clientHeight - pos_horizontal}px ${pos_vertical}px`;
-            top.style.clipPath = `inset(0px 0px 0px ${pos_vertical}px`;
-            slider_vertical.style.left = `${pos_vertical}px`
-            slider_horizontal.style.top = `${pos_horizontal}px`
-            handle.style.left = `${pos_vertical}px`
-            handle.style.top = `${pos_horizontal}px`
-        }
-
-        function initSlider() {
-            pos_horizontal = el.clientHeight / 2;
-            pos_vertical = el.clientWidth / 2;
-            updateSlider();
-        }
+        container.appendChild(el);
         
         const rectOf = () => el.getBoundingClientRect();
 
@@ -99,6 +85,59 @@ function renderPolarImage() {
             window.addEventListener('mouseup', stop);
         };
     });
+
+    let current = 0;
+
+    function showSelected(idx) {
+        console.log('show', idx)
+        views = document.querySelectorAll('.polar-image');
+        views.forEach((view, i) => {
+            view.classList.toggle('active', i === idx)
+        })
+        updateSlider()
+    }
+
+    function updateSlider() {
+        const aolp = document.querySelector('.active .aolp')
+        const dop = document.querySelector('.active .dop')
+        const top = document.querySelector('.active .top')
+        const slider_vertical = document.querySelector('.active .slider-vertical')
+        const slider_horizontal = document.querySelector('.active .slider-horizontal')
+        const handle = document.querySelector('.active .slider-handle')
+        const activeImage = document.querySelector('.polar-image.active');
+
+        aolp.style.clipPath = `inset(${pos_horizontal}px 0px 0px 0px)`;
+        dop.style.clipPath = `inset(0px 0px ${activeImage.clientHeight - pos_horizontal}px ${pos_vertical}px`;
+        top.style.clipPath = `inset(0px 0px 0px ${pos_vertical}px`;
+        slider_vertical.style.left = `${pos_vertical}px`
+        slider_horizontal.style.top = `${pos_horizontal}px`
+        handle.style.left = `${pos_vertical}px`
+        handle.style.top = `${pos_horizontal}px`
+    }
+
+    function initSlider() {
+        const activeImage = document.querySelector('.polar-image.active');
+        pos_horizontal = activeImage.clientHeight / 2;
+        pos_vertical = activeImage.clientWidth / 2;
+        updateSlider();
+        console.log('initSlider')
+    }
+
+    function initViewer() {
+        startAutoView()
+        showSelected(0)
+        initSlider();
+    }
+
+    function nextView() {
+        current = (current + 1) % views.length;
+        showSelected(current)
+    }
+
+    function startAutoView() {
+        interval = setInterval(nextView, 3000); // 3초마다 자동 전환
+    }
+    window.addEventListener('load', initViewer);
 }
 
 renderPolarImage();

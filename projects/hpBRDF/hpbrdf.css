@@ -86,12 +86,17 @@ img {
     user-select: none;
     pointer-events: none;
 }
+
 #polar-image-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%
+    /* grid-template-columns: repeat(3, 1fr); */
 }
 
-.polar-image { position: relative; max-width: 500px; max-height: 500px; width: 100%; height: 100% }
+.polar-image { display: none; position: relative; max-width: 500px; max-height: 500px; width: 100%; height: 100% }
+.polar-image.active { display: flex; }
 .polar-image .srgb {position: relative}
 .polar-image .aolp { position: absolute; inset: 0; }
 .polar-image .dop { position: absolute; inset: 0; }
@@ -114,18 +119,4 @@ a {
 
 a .header-page {
     text-decoration: none;
-}
-
-@media (max-width: 450px) {
-    .publication-array {
-        display: grid;
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (min-width: 451px) {
-    .publication-array {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-    }
 }
