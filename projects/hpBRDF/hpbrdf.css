@@ -106,6 +106,8 @@ img {
     pointer-events: none;
 }
 
+.hp-rendering img { width: 100%; height: auto; display: block; }
+
 #polar-image-list {
     position: flex;
     justify-content: center;
@@ -176,6 +178,7 @@ img {
     font-size: 1.5rem;
 }
 
+.polar-image .srgb span { top: 0; left: 0; }
 .polar-image .aolp span { bottom: 0; left: 0; }
 .polar-image .dop span { top: 0; right: 0; }
 .polar-image .top span { bottom: 0; right: 0; }

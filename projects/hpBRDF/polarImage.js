@@ -1,5 +1,5 @@
 const polarImages = [
-    { name: "Aluminium" },
+    { name: "Aluminum" },
     { name: "SUJ2" },
     { name: "Fake gold" },
     { name: "Black glass" },
@@ -31,6 +31,8 @@ function renderPolarImage() {
     let pos_vertical = 0;
     let pos_horizontal = 0;
     let current = 0;
+    let angle = 0;
+    let view_direction = 1
 
     polarImages.forEach((p, idx) => {
         const thumbnail = document.createElement('div');
@@ -52,6 +54,9 @@ function renderPolarImage() {
 
         const srgb = document.createElement('div');
         srgb.className = 'srgb';
+        const label_srgb = document.createElement('span');
+        label_srgb.innerText = 'RGB';
+        srgb.appendChild(label_srgb);
         const img_srgb = document.createElement('img');
         img_srgb.src = `assets/${p.name}_srgb.png`;
         srgb.appendChild(img_srgb);
@@ -160,6 +165,27 @@ function renderPolarImage() {
     controller.append(thumbnailViewer)
     imageContainer.append(nextButton)
 
+    function animate() {
+        const activeView = document.querySelector(['.active'])
+        const activeSrgb = activeView.querySelector(['.srgb img'])
+        const activeAolp = activeView.querySelector(['.aolp img'])
+        const activeDop = activeView.querySelector(['.dop img'])
+        const activeTop = activeView.querySelector(['.top img'])
+        const activeName = activeView.id
+        
+        angle += view_direction * 0.3;
+
+        if (angle >= 10 || angle <= 0) {
+            view_direction *= -1;
+        }
+        let angle_sync = Math.round(angle) * 3;
+        activeSrgb.src = `assets/${activeName}_${angle_sync}_srgb.png`;
+        activeDop.src = `assets/${activeName}_${angle_sync}_dop.png`;
+        activeAolp.src = `assets/${activeName}_${angle_sync}_aolp.png`;
+        activeTop.src = `assets/${activeName}_${angle_sync}_top.png`;
+        requestAnimationFrame(animate);
+    }
+
     function showSelected(idx) {
         materialName.textContent = `${polarImages[idx].name}`
         views = document.querySelectorAll('.polar-image');
@@ -201,6 +227,7 @@ function renderPolarImage() {
     function initViewer() {
         showSelected(current)
         initSlider();
+        requestAnimationFrame(animate)
     }
 
     function nextView() {
@@ -209,7 +236,8 @@ function renderPolarImage() {
     }
 
     function prevView() {
-        current = (current + 1) % views.length;
+        current = (current - 1 + views.length) % views.length;
+        console.log(current)
         showSelected(current)
     }
 

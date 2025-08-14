@@ -48,7 +48,7 @@
             Acquiring bidirectional reflectance distribution functions (BRDFs) is essential for simulating light transport and analytically modeling material properties. 
             Over the past two decades, numerous intensity-only BRDF datasets in the visible spectrum have been introduced, primarily for RGB image rendering applications. 
             However, in scientific and engineering domains, there remains an unmet need to model light transport with polarization-a fundamental wave property of light-across hyperspectral bands.
-            To address this gap, we present the first hyperspectral-polarimetric BRDF (hpBRDF) dataset of real-world materials, spanning wavelengths from 414 to 950nm and densely sampled at 68 spectral bands. 
+            To address this gap, we present the first <strong>hyperspectral-polarimetric BRDF (hpBRDF) dataset</strong> of real-world materials, spanning wavelengths from 414 to 950nm and densely sampled at 68 spectral bands. 
             This dataset covers both the visible and near-infrared (NIR) spectra, enabling detailed material analysis and light reflection simulations that incorporate polarization at each narrow spectral band.
             We develop an efficient hpBRDF acquisition system that captures high-dimensional hpBRDFs within a practical acquisition time. 
             Using this system, we demonstrate hyperspectral-polarimetric rendering using the acquired hpBRDFs.
@@ -56,7 +56,7 @@
             Also, we propose compact representations through principal component analysis and implicit neural hpBRDF modeling.
         </div>
     </section>
-    <h2>hpBRDF Acquisition System</h2>
+    <h2>hpBRDF Acquisition</h2>
     <section class="acquisition-setup">
         <div class="acquisition-setup">
             <img src="assets/acquisition_setup.png">
@@ -65,6 +65,17 @@
             To efficiently acquire hpBRDFs of real-world materials, we design a hyperspectral-polarimetric reflectance imaging system that combines spectral and polarization sensitivity with angular sampling efficiency. 
             It captures the hpBRDF of a spherical object, represented as a Mueller matrix, within a practical acquisition time. 
             To this end, we extend image-based BRDF imaging with single-shot hyperspectral imaging and visible-to-NIR optical ellipsometry.
+        </div>
+    </section>
+    <h2>Hyperspectral Polarimetric Rendering</h2>
+    <section>
+        <div class="hp-rendering">
+            <img src="assets/hp_rendering.png">
+        </div>
+        <div class="text">
+            Using our hpBRDF dataset on Mitsuba 3 enables the simulation of polarized light transport for arbitrary scenes across the visible-NIR spectrum.
+            Since our hpBRDF table follows the same format as Baek's pBRDF table, this allows for rendering with minimal code modifications.
+            We uploaded our hpBRDF loader code on our <a>github</a>.
         </div>
     </section>
     <h2>Dataset Preview</h2>
