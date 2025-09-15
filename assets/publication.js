@@ -1,5 +1,16 @@
 const publications = [
     {
+      title: "Hyperspectral Polarimetric BRDFs of Real-world Materials",
+      authors: "<strong>Yunseong Moon</strong>, Ryota Maeda, Suhyun Shin, Inseung Hwang, Youngchan Kim, Min H. Kim, Seung-Hwan Baek",
+      venue: "SIGGRAPH Asia 2025",
+      links: [
+        { name: "Project", url: "" },
+        { name: "Paper", url: "" },
+        { name: "Dataset", url: "https://huggingface.co/datasets/yunseongmoon/Hyperspectral-Polarimetric-BRDF" },
+      ],
+      thumbnail: "assets/thumbnail_sigasia2025_moon.jpg"
+    },
+    {
       title: "Event Ellipsometer: Event-based Mueller-Matrix Video Imaging",
       authors: "Ryota Maeda, <strong>Yunseong Moon</strong>, Seung-Hwan Baek",
       venue: "CVPR 2025 highlight",
