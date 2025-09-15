@@ -43,6 +43,16 @@ h2 {
     text-align: center;
 }
 
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
 .publish {
     display: flex;
     justify-self: center;
@@ -64,6 +74,10 @@ h2 {
 .author-list > * {
     white-space: nowrap;
     flex: 0 0 auto;
+}
+
+.author-list a {
+    color: #007bff;
 }
 
 
@@ -148,11 +162,40 @@ img {
     right: 1rem;
 }
 
+.nir-controller {
+    background-color: none;
+    position: relative;
+    margin: 0.5rem auto;
+    display: flex;
+    width: 8rem;
+    align-items: center;
+    justify-content: center;
+    background-color: #DDD;
+    border-radius: 1rem;
+}
+
+.nir-controller button {
+    position: relative;
+    width: 4rem;
+    height: 2rem;
+    border-radius: 1rem;
+    background-color: #DDD;
+    /* border-end-end-radius: 50%; */
+    border: 0;
+    font-weight: bold;
+}
+
+.nir-controller button.selected {
+    background-color: #222;
+    color: #fff;
+}
+
 .polar-image-name {
     position: relative;
     width: max-content;
     margin: 0 auto;
     font-weight: bold;
+    font-size: 1.2rem;
 }
 
 .polar-image-container {
@@ -221,12 +264,8 @@ img {
     font-size: 0.95rem;
     color: #555;
 }
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
+iframe {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 24 / 14
 }

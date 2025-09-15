@@ -11,16 +11,29 @@ const polarImages = [
     { name: "Red rough plastic" },
     { name: "Yellow rough plastic" },
     { name: "Plum rough plastic" },
-    { name: "Green silicon" },
-    { name: "Gray silicon" },
+    { name: "Green silicone" },
+    { name: "Gray silicone" },
 ]
 
 function renderPolarImage() {
     const polarImageList = document.getElementById('polar-image-list');
+    
+    const nirController = document.createElement('div')
+    nirController.className = 'nir-controller'
+    const visButton = document.createElement('button')
+    visButton.className = 'vis-button'
+    const nirButton = document.createElement('button')
+    nirButton.className = 'nir-button'
+    visButton.innerText = 'VIS'
+    nirButton.innerText = 'NIR'
+    nirController.append(visButton)
+    nirController.append(nirButton)
+    polarImageList.append(nirController)
+
     const imageContainer = document.createElement('div')
     imageContainer.className = 'polar-image-container'
     polarImageList.appendChild(imageContainer)
-
+    
     const materialName = document.createElement('div')
     materialName.className = 'polar-image-name'
     polarImageList.appendChild(materialName)
@@ -33,12 +46,13 @@ function renderPolarImage() {
     let current = 0;
     let angle = 0;
     let view_direction = 1
+    let is_nir = false; // true if NIR, false if visible
 
     polarImages.forEach((p, idx) => {
         const thumbnail = document.createElement('div');
         thumbnail.className = 'thumbnail';
         const img_thumbnail = document.createElement('img');
-        img_thumbnail.src = `assets/${p.name}_srgb.png`;
+        img_thumbnail.src = `assets/${p.name}_0_srgb.png`;
         thumbnail.appendChild(img_thumbnail);
         thumbnailViewer.appendChild(thumbnail);
         thumbnail.onmousedown = () => {
@@ -58,7 +72,7 @@ function renderPolarImage() {
         label_srgb.innerText = 'RGB';
         srgb.appendChild(label_srgb);
         const img_srgb = document.createElement('img');
-        img_srgb.src = `assets/${p.name}_srgb.png`;
+        img_srgb.src = `assets/${p.name}_0_srgb.png`;
         srgb.appendChild(img_srgb);
         el.appendChild(srgb);
 
@@ -68,7 +82,7 @@ function renderPolarImage() {
         label_aolp.innerText = 'AoLP';
         aolp.appendChild(label_aolp);
         const img_aolp = document.createElement('img');
-        img_aolp.src = `assets/${p.name}_aolp.png`;
+        img_aolp.src = `assets/${p.name}_0_aolp.png`;
         aolp.appendChild(img_aolp);
         el.appendChild(aolp);
         
@@ -78,7 +92,7 @@ function renderPolarImage() {
         label_top.innerText = 'ToP';
         top.appendChild(label_top);
         const img_top = document.createElement('img');
-        img_top.src = `assets/${p.name}_top.png`;
+        img_top.src = `assets/${p.name}_0_top.png`;
         top.appendChild(img_top);
         el.appendChild(top);
         
@@ -88,7 +102,7 @@ function renderPolarImage() {
         label_dop.innerText = 'DoP';
         dop.appendChild(label_dop);
         const img_dop = document.createElement('img');
-        img_dop.src = `assets/${p.name}_dop.png`;
+        img_dop.src = `assets/${p.name}_0_dop.png`;
         dop.appendChild(img_dop);
         el.appendChild(dop);
 
@@ -175,14 +189,21 @@ function renderPolarImage() {
         
         angle += view_direction * 0.3;
 
-        if (angle >= 10 || angle <= 0) {
+        if (angle >= 9 || angle <= 0) {
             view_direction *= -1;
         }
         let angle_sync = Math.round(angle) * 3;
-        activeSrgb.src = `assets/${activeName}_${angle_sync}_srgb.png`;
-        activeDop.src = `assets/${activeName}_${angle_sync}_dop.png`;
-        activeAolp.src = `assets/${activeName}_${angle_sync}_aolp.png`;
-        activeTop.src = `assets/${activeName}_${angle_sync}_top.png`;
+        if (is_nir) {
+            activeSrgb.src = `assets/${activeName}_${angle_sync}_nir_srgb.png`;
+            activeDop.src = `assets/${activeName}_${angle_sync}_nir_dop.png`;
+            activeAolp.src = `assets/${activeName}_${angle_sync}_nir_aolp.png`;
+            activeTop.src = `assets/${activeName}_${angle_sync}_nir_top.png`;
+        } else {
+            activeSrgb.src = `assets/${activeName}_${angle_sync}_srgb.png`;
+            activeDop.src = `assets/${activeName}_${angle_sync}_dop.png`;
+            activeAolp.src = `assets/${activeName}_${angle_sync}_aolp.png`;
+            activeTop.src = `assets/${activeName}_${angle_sync}_top.png`;
+        }
         requestAnimationFrame(animate);
     }
 
@@ -227,6 +248,7 @@ function renderPolarImage() {
     function initViewer() {
         showSelected(current)
         initSlider();
+        visView();
         requestAnimationFrame(animate)
     }
 
@@ -241,8 +263,21 @@ function renderPolarImage() {
         showSelected(current)
     }
 
+    function visView() {
+        is_nir = false
+        visButton.classList.toggle('selected', true)
+        nirButton.classList.toggle('selected', false)
+    }
+    function nirView() {
+        is_nir = true
+        visButton.classList.toggle('selected', false)
+        nirButton.classList.toggle('selected', true)
+    }
+
     nextButton.addEventListener('click', nextView)
     prevButton.addEventListener('click', prevView)
+    visButton.addEventListener('click', visView)
+    nirButton.addEventListener('click', nirView)
     window.addEventListener('load', initViewer);
 }
 
