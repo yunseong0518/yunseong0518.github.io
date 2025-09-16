@@ -84,13 +84,39 @@ a:hover {
 .institution-list {
     display: flex;
     justify-content: space-evenly;
-    margin-bottom: 0.5rem
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
 }
 
 .link-list {
     display: flex;
     justify-content: space-evenly;
-    margin-bottom: 0.5rem
+    margin-bottom: 1rem
+}
+
+.link-button {
+    background-color: #444;
+    display: flex;
+    justify-content: center;
+    border: 1rem;
+    width: 6rem;
+    height: 2.5rem;
+    border-radius: 1.75rem;
+    color: white;
+    align-items: center;
+}
+
+.link-button:hover {
+    background-color: #333;
+}
+
+.link-list > a:hover {
+    text-decoration: none;
+}
+
+.link-button > img {
+    max-height: 1.5rem;
+    margin-right: 0.3rem;
 }
 
 .text {

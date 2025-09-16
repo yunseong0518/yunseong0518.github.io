@@ -23,6 +23,7 @@
             <div><a href="https://elerac.github.io/">Ryota Maeda</a><sup>1,2</sup></div>
             <div><a href="https://sites.google.com/view/shshin98/home">Suhyun Shin</a><sup>1</sup></div>
             <div><a href="https://vclab.kaist.ac.kr/ishwang/index.html">Inseung Hwang</a><sup>3</sup></div>
+            <div>Youngchan Kim<sup>1</sup></div>
             <div><a href="https://vclab.kaist.ac.kr/minhkim/index.html">Min H. Kim</a><sup>3</sup></div>
             <div><a href="https://www.shbaek.com/home">Seung-Hwan Baek</a><sup>1</sup></div>
         </div>
@@ -35,9 +36,21 @@
             <div>SIGGRAPH Asia 2025</div>
         </div>
         <div class="link-list">
-            <div class="link">[<a>paper</a>]</div>
+            <a>
+                <div class="link-button"><img src="assets/logo_paper.svg"></img>Paper</div>
+            </a>
+            <a>
+                <div class="link-button"><img src="assets/logo_arxiv.svg"></img>arXiv</div>
+            </a>
+            <a href="https://huggingface.co/datasets/yunseongmoon/Hyperspectral-Polarimetric-BRDF">
+                <div class="link-button"><img src="assets/logo_hugging_face.svg"></img>Data</div>
+            </a>
+            <a>
+                <div class="link-button"><img src="assets/logo_github.svg">Code</div>
+            </a>
+            <!-- <div class="link">[<a>paper</a>]</div>
             <div class="link">[<a href="https://huggingface.co/datasets/yunseongmoon/Hyperspectral-Polarimetric-BRDF">dataset</a>]</div>
-            <div class="link">[<a>code</a>]</div>
+            <div class="link">[<a>code</a>]</div> -->
         </div>
     </section>
     <section class="teaser">
@@ -50,7 +63,7 @@
             However, in scientific and engineering domains, there remains an unmet need to model light transport with polarization-a fundamental wave property of light-across hyperspectral bands.
             To address this gap, we present the first <strong>hyperspectral-polarimetric BRDF (hpBRDF) dataset</strong> of real-world materials, spanning wavelengths from 414 to 950nm and densely sampled at 68 spectral bands. 
             This dataset covers both the visible and near-infrared (NIR) spectra, enabling detailed material analysis and light reflection simulations that incorporate polarization at each narrow spectral band.
-            We develop an efficient hpBRDF acquisition system that captures high-dimensional hpBRDFs within a practical acquisition time. 
+            We develop an hpBRDF acquisition system that captures high-dimensional hpBRDFs within a practical acquisition time. 
             Using this system, we demonstrate hyperspectral-polarimetric rendering using the acquired hpBRDFs.
             To provide insights on hpBRDF, we analyze the hpBRDFs with respect to their dependencies on wavelength, polarization state, material type, and illumination/viewing geometry. 
             Also, we propose compact representations through principal component analysis and implicit neural hpBRDF modeling.
@@ -75,7 +88,6 @@
         <div class="text">
             Using our hpBRDF dataset on Mitsuba 3 enables the simulation of polarized light transport for arbitrary scenes across the visible-NIR spectrum.
             Since our hpBRDF table follows the same format as Baek's pBRDF table, this allows for rendering with minimal code modifications.
-            We uploaded our hpBRDF loader code on our <a>github</a>.
         </div>
     </section>
     <h2>Dataset Preview</h2>
@@ -91,12 +103,6 @@
                 referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen></iframe>
         </div>
-    </section>
-    <section id="citation">
-        <h2>Citation</h2>
-        <code>
-            TODO
-        </code>
     </section>
 </body>
 </html>
