@@ -3,7 +3,7 @@ const polarImages = [
     { name: "SUJ2" },
     { name: "Fake gold" },
     { name: "Black glass" },
-    { name: "White Billiard" },
+    { name: "White billiard" },
     { name: "White smooth plastic" },
     { name: "White rough plastic" },
     { name: "Black rough plastic" },
