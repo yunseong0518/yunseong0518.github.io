@@ -4,7 +4,7 @@ const publications = [
       authors: "<strong>Yunseong Moon</strong>, Ryota Maeda, Suhyun Shin, Inseung Hwang, Youngchan Kim, Min H. Kim, Seung-Hwan Baek",
       venue: "SIGGRAPH Asia 2025",
       links: [
-        { name: "Project", url: "" },
+        { name: "Project", url: "https://yunseong0518.github.io/projects/hpBRDF/" },
         { name: "Paper", url: "" },
         { name: "Dataset", url: "https://huggingface.co/datasets/yunseongmoon/Hyperspectral-Polarimetric-BRDF" },
       ],
