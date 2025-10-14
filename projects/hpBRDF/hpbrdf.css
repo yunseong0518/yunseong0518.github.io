@@ -115,6 +115,7 @@ a:hover {
 
 .link-button > img {
     max-height: 1.5rem;
+    max-width: 1.5rem;
     margin-right: 0.3rem;
 }
 
@@ -130,6 +131,8 @@ a:hover {
 .acquisition-setup img {
     max-width: 100%;
 }
+.acquisition-setup video { width: 100%; height: auto; display: block; max-width: 760px;}
+
 .teaser img {
     max-width: 100%;
 }
@@ -146,6 +149,7 @@ img {
 }
 
 .hp-rendering img { width: 100%; height: auto; display: block; }
+.hp-rendering video { width: 100%; height: auto; display: block; max-width: 760px;}
 
 #polar-image-list {
     position: flex;
