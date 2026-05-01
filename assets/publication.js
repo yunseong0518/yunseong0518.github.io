@@ -1,5 +1,15 @@
 const publications = [
     {
+      title: "Broadband Hyperspectral 3D Imaging under Dispersed Structured Light",
+      authors: "Suhyun Shin, <strong>Yunseong Moon</strong>, Ryota Maeda, David Lindell, Kyros Kutulakos, Seung-Hwan Baek",
+      venue: "SIGGRAPH 2026",
+      links: [
+        { name: "Project", url: "" },
+        { name: "Paper", url: "" },
+      ],
+      thumbnail: "assets/thumbnail_sig2026_shin.png"
+    },
+    {
       title: "Hyperspectral Polarimetric BRDFs of Real-world Materials",
       authors: "<strong>Yunseong Moon</strong>, Ryota Maeda, Suhyun Shin, Inseung Hwang, Youngchan Kim, Min H. Kim, Seung-Hwan Baek",
       venue: "SIGGRAPH Asia 2025",
