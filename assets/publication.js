@@ -15,7 +15,7 @@ const publications = [
       venue: "SIGGRAPH Asia 2025",
       links: [
         { name: "Project", url: "https://yunseong0518.github.io/projects/hpBRDF/" },
-        { name: "Paper", url: "" },
+        { name: "Paper", url: "https://arxiv.org/pdf/2509.13779" },
         { name: "Dataset", url: "https://huggingface.co/datasets/yunseongmoon/Hyperspectral-Polarimetric-BRDF" },
       ],
       thumbnail: "assets/thumbnail_sigasia2025_moon.jpg"
