@@ -1,7 +1,17 @@
 const publications = [
     {
+      title: "Transient Polarimetry",
+      authors: "Oscar Pueyo-Ciutad, Guillermo Enguita-Lahoz, <strong>Yunseong Moon</strong>, Ryota Maeda, Seung-Hwan Baek, Albert Redo-Sanchez, Diego Gutierrez",
+      venue: "SIGGRAPH 2026 (Poster)",
+      links: [
+        { name: "Project", url: "" },
+        { name: "Paper", url: "" },
+      ],
+      thumbnail: "assets/thumbnail_sig2026_oscar.jpg"
+    },
+    {
       title: "Broadband Hyperspectral 3D Imaging under Dispersed Structured Light",
-      authors: "Suhyun Shin, <strong>Yunseong Moon</strong>, Ryota Maeda, David Lindell, Kyros Kutulakos, Seung-Hwan Baek",
+      authors: "Suhyun Shin, <strong>Yunseong Moon</strong>, Ryota Maeda, David B. Lindell, Kiriakos N. Kutulakos, Seung-Hwan Baek",
       venue: "SIGGRAPH 2026",
       links: [
         { name: "Project", url: "" },
