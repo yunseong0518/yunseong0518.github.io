@@ -27,7 +27,7 @@ h2 {
     margin-top: 2rem;
 }
 
-.news, .education, .publication, .patent {
+.news, .educations, .publication-list, .patent {
     margin-bottom: 1.5rem;
 }
 
@@ -35,7 +35,7 @@ h2 {
     font-weight: bold;
 }
 
-#header-page {
+.header-page {
     margin-right: 1rem;
 }
 
@@ -50,7 +50,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: warp;
+    flex-wrap: wrap;
     z-index: 1000;
     background-color: rgb(197, 198, 202);
     color: black;
@@ -100,7 +100,7 @@ a {
     text-decoration: underline;
 }
 
-a .header-page {
+a.header-page {
     text-decoration: none;
 }
 

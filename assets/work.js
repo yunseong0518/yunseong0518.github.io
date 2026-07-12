@@ -10,7 +10,7 @@ const works = [
       date: "2022. 01. - 2022. 07.",
     },
     {
-      title: "Full-time Software Enginneer Intern",
+      title: "Full-time Software Engineer Intern",
       company: "DEMO, Pohang, Republic of Korea",
       date: "2020.12. - 2021.02.",
     },

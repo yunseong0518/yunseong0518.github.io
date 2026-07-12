@@ -15,7 +15,7 @@ const educations = [
     },
   ];
   
-  function renderNews() {
+  function renderEducations() {
     const educationList = document.getElementById('education-list');
     educations.forEach(p => {
       let labHTML = p.lab ? `
@@ -35,5 +35,5 @@ const educations = [
     });
   }
   
-  renderNews();
+  renderEducations();
   
