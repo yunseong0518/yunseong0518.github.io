@@ -1,7 +1,8 @@
 const publications = [
     {
+      id: "transient",
       title: "Transient Polarimetry",
-      authors: "Oscar Pueyo-Ciutad, Guillermo Enguita-Lahoz, <strong>Yunseong Moon</strong>, Ryota Maeda, Seung-Hwan Baek, Albert Redo-Sanchez, Diego Gutierrez",
+      authors: "Oscar Pueyo-Ciutad, Guillermo Enguita-Lahoz, <strong><u>Yunseong Moon</u></strong>, Ryota Maeda, Seung-Hwan Baek, Albert Redo-Sanchez, Diego Gutierrez",
       venue: "SIGGRAPH 2026 (Poster)",
       links: [
         { name: "Project", url: "" },
@@ -10,8 +11,9 @@ const publications = [
       thumbnail: "assets/thumbnail_sig2026_oscar.jpg"
     },
     {
+      id: "broadband",
       title: "Broadband Hyperspectral 3D Imaging under Dispersed Structured Light",
-      authors: "Suhyun Shin, <strong>Yunseong Moon</strong>, Ryota Maeda, David B. Lindell, Kiriakos N. Kutulakos, Seung-Hwan Baek",
+      authors: "Suhyun Shin, <strong><u>Yunseong Moon</u></strong>, Ryota Maeda, David B. Lindell, Kiriakos N. Kutulakos, Seung-Hwan Baek",
       venue: "SIGGRAPH 2026",
       links: [
         { name: "Project", url: "" },
@@ -20,8 +22,9 @@ const publications = [
       thumbnail: "assets/thumbnail_sig2026_shin.png"
     },
     {
+      id: "hpbrdf",
       title: "Hyperspectral Polarimetric BRDFs of Real-world Materials",
-      authors: "<strong>Yunseong Moon</strong>, Ryota Maeda, Suhyun Shin, Inseung Hwang, Youngchan Kim, Min H. Kim, Seung-Hwan Baek",
+      authors: "<strong><u>Yunseong Moon</u></strong>, Ryota Maeda, Suhyun Shin, Inseung Hwang, Youngchan Kim, Min H. Kim, Seung-Hwan Baek",
       venue: "SIGGRAPH Asia 2025",
       links: [
         { name: "Project", url: "https://yunseong0518.github.io/projects/hpBRDF/" },
@@ -31,8 +34,9 @@ const publications = [
       thumbnail: "assets/thumbnail_sigasia2025_moon.jpg"
     },
     {
+      id: "event",
       title: "Event Ellipsometer: Event-based Mueller-Matrix Video Imaging",
-      authors: "Ryota Maeda, <strong>Yunseong Moon</strong>, Seung-Hwan Baek",
+      authors: "Ryota Maeda, <strong><u>Yunseong Moon</u></strong>, Seung-Hwan Baek",
       venue: "CVPR 2025 highlight",
       links: [
         { name: "Project", url: "https://elerac.github.io/projects/eventellipsometer/" },
@@ -41,8 +45,9 @@ const publications = [
       thumbnail: "assets/thumbnail_cvpr2025_ryota.png"
     },
     {
+      id: "spectral",
       title: "Spectral and Polarization Vision: Spectro-polarimetric Real-world Dataset",
-      authors: "Yujin Jeon, Eunsue Choi, Youngchan Kim, <strong>Yunseong Moon</strong>, Khalid Omer, Felix Heide, Seung-Hwan Baek",
+      authors: "Yujin Jeon, Eunsue Choi, Youngchan Kim, <strong><u>Yunseong Moon</u></strong>, Khalid Omer, Felix Heide, Seung-Hwan Baek",
       venue: "CVPR 2024 highlight",
       links: [
         { name: "Project", url: "https://eschoi.com/SPDataset/" },
@@ -58,6 +63,7 @@ const publications = [
     publications.forEach(p => {
       const el = document.createElement('div');
       el.className = 'publication-list';
+      if (p.id) el.id = 'pub-' + p.id;
       el.innerHTML = `
         <div class="photo-with-text">
           <div class="photo">
@@ -80,6 +86,7 @@ const publications = [
     publications.forEach(p => {
       const el = document.createElement('div');
       el.className = 'publication-array';
+      if (p.id) el.id = 'pub-' + p.id;
       el.innerHTML = `
         <div>
           <div>

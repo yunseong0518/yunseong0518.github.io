@@ -5,7 +5,7 @@ const educations = [
       lab: "Computer Graphics Lab",
       lab_link: "https://cg.postech.ac.kr",
       advisor: "Seung-Hwan Baek",
-      advisor_link: "https://shbaek.com",
+      advisor_link: "https://www.shbaek.com",
       date: "2024. 02. - Present",
     },
     {
