@@ -4,12 +4,12 @@ header {
     position: fixed;
     top: 0;
     left: 0;
+    right: 0; /* 100vw would overflow by the scrollbar width */
     box-sizing: border-box;
-    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: warp;
+    flex-wrap: wrap;
     z-index: 1000;
     color: black;
     margin-bottom: 2rem;
@@ -103,7 +103,7 @@ a:hover {
     background-color: #444;
     display: flex;
     justify-content: center;
-    border: 1rem;
+    border: none; /* `border: 1rem` was invalid (no style) and did nothing */
     width: 6rem;
     height: 2.5rem;
     border-radius: 1.75rem;
@@ -143,7 +143,7 @@ a:hover {
     max-width: 100%;
 }
 
-#header-page {
+.header-page {
     margin-right: 1rem;
 }
 
@@ -158,10 +158,10 @@ img {
 .hp-rendering video { width: 100%; height: auto; display: block; max-width: 760px;}
 
 #polar-image-list {
-    position: flex;
+    display: flex; /* `position: flex` is not a valid value */
+    flex-direction: column;
     justify-content: center;
     width: 100%;
-    height: 100%;
 }
 
 .polar-image-controller {

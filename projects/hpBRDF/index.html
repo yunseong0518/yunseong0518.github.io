@@ -38,30 +38,27 @@
         </div>
         <div class="link-list">
             <a href="https://dl.acm.org/doi/10.1145/3757377.3763853">
-                <div class="link-button"><img src="assets/logo_paper.svg"></img>Paper</div>
+                <div class="link-button"><img src="assets/logo_paper.svg" alt="">Paper</div>
             </a>
             <a href="https://arxiv.org/pdf/2509.13779">
-                <div class="link-button"><img src="assets/logo_arxiv.svg"></img>arXiv</div>
+                <div class="link-button"><img src="assets/logo_arxiv.svg" alt="">arXiv</div>
             </a>
             <a href="https://huggingface.co/datasets/yunseongmoon/Hyperspectral-Polarimetric-BRDF">
-                <div class="link-button"><img src="assets/logo_hugging_face.svg"></img>Data</div>
+                <div class="link-button"><img src="assets/logo_hugging_face.svg" alt="">Data</div>
             </a>
             <a href="https://github.com/yunseong0518/hpBRDF">
-                <div class="link-button"><img src="assets/logo_github.svg">Code</div>
+                <div class="link-button"><img src="assets/logo_github.svg" alt="">Code</div>
             </a>
-            <!-- <div class="link">[<a>paper</a>]</div>
-            <div class="link">[<a href="https://huggingface.co/datasets/yunseongmoon/Hyperspectral-Polarimetric-BRDF">dataset</a>]</div>
-            <div class="link">[<a>code</a>]</div> -->
         </div>
     </section>
     <section class="teaser">
-        <img src="assets/teaser.png">
+        <img src="assets/teaser.png" alt="hpBRDF teaser: hyperspectral, RGB and polarimetric renderings">
     </section>
     <section class="abstract">
         <div class="text">
             Acquiring bidirectional reflectance distribution functions (BRDFs) is essential for simulating light transport and analytically modeling material properties. 
             Over the past two decades, numerous intensity-only BRDF datasets in the visible spectrum have been introduced, primarily for RGB image rendering applications. 
-            However, in scientific and engineering domains, there remains an unmet need to model light transport with polarization-a fundamental wave property of light-across hyperspectral bands.
+            However, in scientific and engineering domains, there remains an unmet need to model light transport with polarization&mdash;a fundamental wave property of light&mdash;across hyperspectral bands.
             To address this gap, we present the first <strong>hyperspectral-polarimetric BRDF (hpBRDF) dataset</strong> of real-world materials, spanning wavelengths from 414 to 950nm and densely sampled at 68 spectral bands. 
             This dataset covers both the visible and near-infrared (NIR) spectra, enabling detailed material analysis and light reflection simulations that incorporate polarization at each narrow spectral band.
             We develop an hpBRDF acquisition system that captures high-dimensional hpBRDFs within a practical acquisition time. 
@@ -73,7 +70,7 @@
     <h2>hpBRDF Acquisition</h2>
     <section class="acquisition-setup">
         <div class="acquisition-setup">
-            <video src="assets/hpBRDF_imaging_system.mp4" autoplay muted loop playsinline></video>
+            <video src="assets/hpBRDF_imaging_system.mp4" poster="assets/hpBRDF_imaging_system_poster.jpg" autoplay muted loop playsinline></video>
         </div>
         <div class="text">
             To acquire hpBRDFs of real-world materials, we design a hyperspectral-polarimetric reflectance imaging system that combines spectral and polarization sensitivity with angular sampling efficiency. 
@@ -84,7 +81,7 @@
     <h2>Hyperspectral Polarimetric Rendering</h2>
     <section class="hp-rendering">
         <div class="hp-rendering">
-            <video src="assets/hyperspectral_rendering.mp4" autoplay muted loop playsinline></video>
+            <video src="assets/hyperspectral_rendering.mp4" poster="assets/hyperspectral_rendering_poster.jpg" autoplay muted loop playsinline></video>
         </div>
         <div class="text">
             Using our hpBRDF dataset on Mitsuba 3 enables the simulation of polarized light transport for arbitrary scenes across the visible-NIR spectrum.
@@ -97,8 +94,9 @@
     <section id="supp-video">
         <div id="video-container">
             <iframe
-            src="https://www.youtube.com/embed/QwQdC2yuhgc?si=XQlmyXYNKx54ePGf&amp;controls=1;modestbranding=1;iv_load_policy=3"
+            src="https://www.youtube.com/embed/QwQdC2yuhgc?si=XQlmyXYNKx54ePGf&amp;controls=1&amp;modestbranding=1&amp;iv_load_policy=3"
             title="hpBRDF supplementary video"
+            loading="lazy"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
