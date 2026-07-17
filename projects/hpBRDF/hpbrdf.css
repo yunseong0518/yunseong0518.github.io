@@ -52,9 +52,12 @@ a:hover {
 }
 
 
+/* justify-content (not justify-self) centers the child in the flex row.
+   justify-self is a grid-item property and is ignored on block boxes by
+   Safari/Firefox, which left-aligned this on mobile. */
 .publish {
     display: flex;
-    justify-self: center;
+    justify-content: center;
     margin-bottom: 1rem
 }
 
@@ -90,6 +93,9 @@ a:hover {
 .link-list {
     display: flex;
     justify-content: space-evenly;
+    /* 4 x 6rem buttons overflow narrow screens without wrapping. */
+    flex-wrap: wrap;
+    gap: 0.5rem;
     margin-bottom: 1rem
 }
 
@@ -292,6 +298,58 @@ img {
 .sub {
     font-size: 0.95rem;
     color: #555;
+}
+
+/* --- Click-to-copy BibTeX block --- */
+.bibtex {
+    position: relative;
+    overflow: hidden; /* keep the hint pinned while the <pre> scrolls */
+    background: #f6f6f7;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 0.9rem 1rem;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+.bibtex:hover,
+.bibtex:focus-visible {
+    background: #eeeef0;
+    border-color: #bbb;
+}
+
+.bibtex pre {
+    margin: 0;
+    font-size: 0.78rem;
+    line-height: 1.5;
+    white-space: pre;   /* preserve BibTeX formatting */
+    overflow-x: auto;   /* long author line scrolls here, not on the page */
+}
+
+.copy-hint {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.6rem;
+    font-size: 0.72rem;
+    font-weight: bold;
+    color: #666;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 0.1rem 0.4rem;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.bibtex.is-copied .copy-hint {
+    color: #fff;
+    background: #2e7d32;
+    border-color: #2e7d32;
+}
+
+.bibtex.is-failed .copy-hint {
+    color: #fff;
+    background: #b3261e;
+    border-color: #b3261e;
 }
 iframe {
     width: 100%;
