@@ -5,8 +5,7 @@ const publications = [
       authors: "Oscar Pueyo-Ciutad, Guillermo Enguita-Lahoz, <strong><u>Yunseong Moon</u></strong>, Ryota Maeda, Seung-Hwan Baek, Albert Redo-Sanchez, Diego Gutierrez",
       venue: "SIGGRAPH 2026 (Poster)",
       links: [
-        { name: "Project", url: "" },
-        { name: "Paper", url: "" },
+        { name: "Paper", url: "https://dl.acm.org/doi/10.1145/3799825.3818744" },
       ],
       thumbnail: "assets/thumbnail_sig2026_oscar.jpg"
     },
@@ -16,8 +15,8 @@ const publications = [
       authors: "Suhyun Shin, <strong><u>Yunseong Moon</u></strong>, Ryota Maeda, David B. Lindell, Kiriakos N. Kutulakos, Seung-Hwan Baek",
       venue: "SIGGRAPH 2026",
       links: [
-        { name: "Project", url: "" },
-        { name: "Paper", url: "" },
+        { name: "Project", url: "https://shshin1210.github.io/BH3D/" },
+        { name: "Paper", url: "https://dl.acm.org/doi/10.1145/3799902.3811086" },
       ],
       thumbnail: "assets/thumbnail_sig2026_shin.png"
     },
@@ -28,7 +27,7 @@ const publications = [
       venue: "SIGGRAPH Asia 2025",
       links: [
         { name: "Project", url: "https://yunseong0518.github.io/projects/hpBRDF/" },
-        { name: "Paper", url: "https://arxiv.org/pdf/2509.13779" },
+        { name: "Paper", url: "https://dl.acm.org/doi/10.1145/3757377.3763853" },
         { name: "Dataset", url: "https://huggingface.co/datasets/yunseongmoon/Hyperspectral-Polarimetric-BRDF" },
       ],
       thumbnail: "assets/thumbnail_sigasia2025_moon.jpg"
