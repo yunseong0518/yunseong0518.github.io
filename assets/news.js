@@ -1,6 +1,10 @@
 const emoji_celeb = "&#x1F389"
 const news = [
     {
+      date: "2026. 07.",
+      msg: `${emoji_celeb}Two papers are conditionally accepted at SIGGRAPH Asia 2026.`
+    },
+    {
       date: "2026. 04.",
       msg: `${emoji_celeb}Two papers (One main track, one poster track) will be presented at SIGGRAPH 2026.`
     },
