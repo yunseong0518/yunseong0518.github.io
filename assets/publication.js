@@ -8,7 +8,7 @@ const publications = [
         { name: "Project", url: "https://michaelcsj.github.io/PDIR/" },
         { name: "Paper", url: "." },
       ],
-      thumbnail: "assets/thumbnail_siga2026_choi.png"
+      thumbnail: "assets/thumbnail_siga2026_choi.jpg"
     },
     {
       id: "penvmap",
@@ -19,7 +19,7 @@ const publications = [
         { name: "Project", url: "." },
         { name: "Paper", url: "." },
       ],
-      thumbnail: "assets/thumbnail_siga2026_oh.png"
+      thumbnail: "assets/thumbnail_siga2026_oh.jpg"
     },
     {
       id: "transient",
@@ -58,26 +58,39 @@ const publications = [
       id: "event",
       title: "Event Ellipsometer: Event-based Mueller-Matrix Video Imaging",
       authors: "Ryota Maeda, <strong><u>Yunseong Moon</u></strong>, Seung-Hwan Baek",
-      venue: "CVPR 2025 highlight",
+      venue: "CVPR 2025 (Highlight)",
       links: [
         { name: "Project", url: "https://elerac.github.io/projects/eventellipsometer/" },
         { name: "Paper", url: "https://arxiv.org/pdf/2411.17313" },
       ],
-      thumbnail: "assets/thumbnail_cvpr2025_ryota.png"
+      thumbnail: "assets/thumbnail_cvpr2025_ryota.jpg"
     },
     {
       id: "spectral",
       title: "Spectral and Polarization Vision: Spectro-polarimetric Real-world Dataset",
       authors: "Yujin Jeon, Eunsue Choi, Youngchan Kim, <strong><u>Yunseong Moon</u></strong>, Khalid Omer, Felix Heide, Seung-Hwan Baek",
-      venue: "CVPR 2024 highlight",
+      venue: "CVPR 2024 (Highlight)",
       links: [
         { name: "Project", url: "https://eschoi.com/SPDataset/" },
         { name: "Paper", url: "https://arxiv.org/pdf/2311.17396" },
         { name: "Dataset", url: "https://huggingface.co/datasets/jyj7913/spectro-polarimetric" }
       ],
-      thumbnail: "assets/thumbnail_cvpr2024_jeon.png"
+      thumbnail: "assets/thumbnail_cvpr2024_jeon.jpg"
     }
   ];
+
+  // Links whose url is still a placeholder ("." or "") are not rendered, so an
+  // unreleased paper/project page never shows up as a dead link.
+  function renderLinks(links) {
+    const real = links.filter(l => l.url && l.url !== '.');
+    if (!real.length) return '';
+    return `<div class="publication-links">${real.map(l => `<a class="pill pill-sm" href="${l.url}">${l.name}</a>`).join('')}</div>`;
+  }
+
+  // Plain-text title for alt attributes (authors carry <strong>/<u> markup).
+  function altText(p) {
+    return `${p.title} (${p.venue})`.replace(/"/g, '&quot;');
+  }
 
   function renderPublicationList() {
     const pubList = document.getElementById('publication-list');
@@ -88,13 +101,13 @@ const publications = [
       el.innerHTML = `
         <div class="photo-with-text">
           <div class="photo">
-            <img src="${p.thumbnail}">
+            <img src="${p.thumbnail}" alt="${altText(p)}" loading="lazy">
           </div>
           <div class="text">
             <div class="publication-title">${p.title}</div>
             <div class="sub">${p.authors}</div>
-            <div class="sub">${p.venue}</div>
-            <div class="publication-links">[${p.links.map(l => `<a href="${l.url}">${l.name}</a>`).join('] [')}]</div>
+            <div class="publication-venue">${p.venue}</div>
+            ${renderLinks(p.links)}
           </div>
         </div>
       `;
@@ -112,13 +125,13 @@ const publications = [
         <div>
           <div>
             <div style="min-width: 200px;">
-              <img src="${p.thumbnail}" style="width: 100%;">
+              <img src="${p.thumbnail}" alt="${altText(p)}" loading="lazy" style="width: 100%;">
             </div>
             <div style="min-width: 250px;">
               <div class="publication-title">${p.title}</div>
               <div class="sub">${p.authors}</div>
-              <div class="sub">${p.venue}</div>
-              <div class="publication-links">[${p.links.map(l => `<a href="${l.url}">${l.name}</a>`).join('] [')}]</div>
+              <div class="publication-venue">${p.venue}</div>
+              ${renderLinks(p.links)}
             </div>
           </div>
         </div>

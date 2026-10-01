@@ -1,6 +1,7 @@
+// The bio at the top already states the research focus; this line just
+// introduces the clips.
 const researchInterests =
-  "I work on computational imaging — capturing and modeling light beyond what " +
-  "conventional cameras see, across hyperspectral bands and polarization.";
+  "Short clips of selected projects. Click a clip to jump to its paper below.";
 
 const showcaseProjects = [
   {
@@ -33,14 +34,14 @@ const showcaseProjects = [
   },
   {
     title: "Event Ellipsometer",
-    venue: "CVPR 2025 (highlight)",
+    venue: "CVPR 2025 (Highlight)",
     pub: "event",
     poster: "assets/showcase/poster_cvpr2025_ryota.jpg",
     video: "assets/showcase/video_cvpr2025_ryota.mp4",
   },
   {
     title: "Spectral & Polarization Vision",
-    venue: "CVPR 2024 (highlight)",
+    venue: "CVPR 2024 (Highlight)",
     pub: "spectral",
     poster: "assets/showcase/poster_cvpr2024_jeon.jpg",
   },

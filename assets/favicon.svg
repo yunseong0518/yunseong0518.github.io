@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Crescent moon (for "Moon") in the site accent colour -->
+  <mask id="m"><rect width="64" height="64" fill="#fff"/><circle cx="41" cy="22" r="15" fill="#000"/></mask>
+  <rect width="64" height="64" rx="14" fill="#c80150"/>
+  <circle cx="30" cy="34" r="20" fill="#fff" mask="url(#m)"/>
+</svg>

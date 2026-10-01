@@ -15,7 +15,7 @@ const patents = [
       el.innerHTML = `
       <div class="photo-with-text">
         <div class="photo">
-          <img src="${p.thumbnail}">
+          <img src="${p.thumbnail}" alt="${p.title}" loading="lazy">
         </div>
         <div class="text">
           <div class="patent-title">${p.title}</div>

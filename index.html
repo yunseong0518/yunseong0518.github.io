@@ -3,48 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yunseong Moon</title>
+    <title>Yunseong Moon | Computational Imaging, POSTECH</title>
+    <meta name="description" content="Yunseong Moon is a Ph.D. student at POSTECH working on computational imaging: polarimetric and hyperspectral imaging, appearance acquisition, and inverse rendering.">
+    <meta name="author" content="Yunseong Moon">
+    <link rel="canonical" href="https://yunseong0518.github.io/">
+    <link rel="icon" href="favicon.ico" sizes="48x48">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+    <!-- Link previews (Slack, email, messengers) -->
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Yunseong Moon">
+    <meta property="og:description" content="Ph.D. student at POSTECH. Computational imaging: polarization, hyperspectral imaging, and inverse rendering.">
+    <meta property="og:url" content="https://yunseong0518.github.io/">
+    <meta property="og:image" content="https://yunseong0518.github.io/assets/profile.jpg">
+    <meta name="twitter:card" content="summary">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Yunseong Moon",
+      "url": "https://yunseong0518.github.io/",
+      "image": "https://yunseong0518.github.io/assets/profile.jpg",
+      "jobTitle": "Ph.D. Student",
+      "affiliation": { "@type": "CollegeOrUniversity", "name": "POSTECH" },
+      "sameAs": [
+        "https://scholar.google.com/citations?user=YwKp8dIAAAAJ",
+        "https://github.com/yunseong0518",
+        "https://www.linkedin.com/in/yunseongmoon"
+      ]
+    }
+    </script>
+
     <link rel="stylesheet" href="assets/style.css">
+    <script defer src="assets/profile.js"></script>
     <script defer src="assets/showcase.js"></script>
     <script defer src="assets/news.js"></script>
-    <script defer src="assets/education.js"></script>
     <script defer src="assets/publication.js"></script>
-    <script defer src="assets/patent.js"></script>
-    <script defer src="assets/award.js"></script>
+    <script defer src="assets/education.js"></script>
     <script defer src="assets/work.js"></script>
-    </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RPLGL3Y54Q"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-RPLGL3Y54Q');
-</script>
+    <script defer src="assets/award.js"></script>
+    <script defer src="assets/patent.js"></script>
+    <script defer src="assets/service.js"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPLGL3Y54Q"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RPLGL3Y54Q');
+    </script>
+</head>
 <body>
     <header>
-        <div>Yunseong Moon</div>
+        <div class="site-name"><a href="index.html">Yunseong Moon</a></div>
         <nav>
-            <a class="header-page" href="index.html"><strong>Home</strong></a>
+            <a class="header-page is-current" href="index.html" aria-current="page">Home</a>
             <a class="header-page" href="publications.html">Publications</a>
         </nav>
     </header>
-    <section class="photo-with-text">
+
+    <section class="photo-with-text hero">
         <div class="photo" id="profile">
-            <img src="assets/profile.jpg" alt="Yunseong Moon" style="border-radius: 10%;">
+            <img src="assets/profile.jpg" alt="Yunseong Moon" width="200" height="200">
         </div>
         <div class="text">
             <h1>Yunseong Moon</h1>
-            <p>
-            Ph.D. Student @ POSTECH CSE / <a href="https://cg.postech.ac.kr">Computer Graphics Lab</a><br>
-            Research in Computational Imaging
+            <p class="hero-role">
+                Ph.D. Student, Computer Science and Engineering, POSTECH<br>
+                <a href="https://cg.postech.ac.kr">Computer Graphics Lab</a> &middot; Advisor: <a href="https://shbaek.com">Seung-Hwan Baek</a>
             </p>
-            <p>Contact: yunseong0518 [at] postech.ac.kr</p>
-            <p>
-            <a href="https://github.com/yunseong0518"><img src="assets/logo_github.png" style="max-width: 30px"></a>
-            <a href="https://www.linkedin.com/in/yunseongmoon"><img src="assets/logo_linkedin.png" style="max-width: 30px"></a>
-            <a href="https://scholar.google.com/citations?user=YwKp8dIAAAAJ&hl=ko"><svg width="24px" height="24px" viewBox="0 0 24 24" role="img" style="max-width: 30px" xmlns="http://www.w3.org/2000/svg"><title>Google Scholar icon</title><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg></a>
-        </p>
+            <p class="bio">
+                I work on <strong>computational imaging</strong>: building imaging systems and datasets that
+                capture light beyond RGB&mdash;<strong>polarization</strong> and <strong>hyperspectral</strong>
+                bands&mdash;and using them for appearance acquisition, inverse rendering, and 3D imaging.
+            </p>
+            <p class="callout">I am looking for <strong>research internship</strong> opportunities. Feel free to reach out!</p>
+            <div class="contact-links">
+                <a class="pill" id="cv-link" href="assets/cv.pdf" hidden>CV</a>
+                <a class="pill" href="mailto:yunseong0518@postech.ac.kr">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5h20v14H2z" fill="none" stroke="currentColor" stroke-width="2"/><path d="m2 6 10 7 10-7" fill="none" stroke="currentColor" stroke-width="2"/></svg>Email</a>
+                <a class="pill" href="https://scholar.google.com/citations?user=YwKp8dIAAAAJ&hl=en">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>Scholar</a>
+                <a class="pill" href="https://github.com/yunseong0518"><img src="assets/logo_github.png" alt="">GitHub</a>
+                <a class="pill" href="https://www.linkedin.com/in/yunseongmoon"><img src="assets/logo_linkedin.png" alt="">LinkedIn</a>
+            </div>
+            <p class="sub email-text">yunseong0518 [at] postech.ac.kr</p>
         </div>
     </section>
 
@@ -55,21 +101,28 @@
     </section>
 
     <section id="showcase">
-    <h2>Research Interests</h2>
+    <h2>Research</h2>
     <p class="showcase-intro" id="showcase-intro"></p>
     <div class="carousel" id="showcase-carousel" tabindex="0" aria-roledescription="carousel" aria-label="Project intro clips">
     </div>
     </section>
 
+    <section id="publications">
+    <h2>Publications</h2>
+    <p class="sub legend">* Equal contribution</p>
+    <div class="publication-list" id="publication-list">
+    </div>
+    </section>
+
     <section id="educations">
-    <h2>Educations</h2>
+    <h2>Education</h2>
     <div class="education-list" id="education-list">
     </div>
     </section>
 
-    <section id="publications">
-    <h2>Publications</h2>
-    <div class="publication-list" id="publication-list">
+    <section id="experience">
+    <h2>Work Experience</h2>
+    <div class="work-list" id="work-list">
     </div>
     </section>
 
@@ -85,14 +138,15 @@
     </div>
     </section>
 
-    <section id="works">
-    <h2>Work Experiences</h2>
-    <div class="work-list" id="work-list">
+    <section id="services">
+    <h2>Services</h2>
+    <div class="service-list" id="service-list">
     </div>
     </section>
 
     <footer id="contact">
-
+        <span>&copy; 2026 Yunseong Moon</span>
+        <span class="sub">Last updated: October 2026</span>
     </footer>
 </body>
 </html>
