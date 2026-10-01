@@ -5,14 +5,14 @@ const publications = [
       authors: "Seokjun Choi*, <strong><u>Yunseong Moon*</u></strong>, Kaizhang Kang, Hoon-Gyu Chung, Jin-Nyeong Kim, Giljoo Nam, Seung-Hwan Baek",
       venue: "ACM Transactions on Graphics (Proceedings of SIGGRAPH Asia 2026)",
       links: [
-        { name: "Project", url: "." },
+        { name: "Project", url: "https://michaelcsj.github.io/PDIR/" },
         { name: "Paper", url: "." },
       ],
       thumbnail: "assets/thumbnail_siga2026_choi.png"
     },
     {
       id: "penvmap",
-      title: "Real-world Polarimetric Envrironment Map Dataset",
+      title: "Real-world Polarimetric Environment Map Dataset",
       authors: "Yonghee Oh, Ryota Maeda, <strong><u>Yunseong Moon</u></strong>, Seung-Hwan Baek",
       venue: "SIGGRAPH Asia 2026",
       links: [

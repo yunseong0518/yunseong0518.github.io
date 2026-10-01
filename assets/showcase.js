@@ -4,11 +4,25 @@ const researchInterests =
 
 const showcaseProjects = [
   {
+    title: "Snapshot Polarimetric Display Inverse Rendering",
+    venue: "SIGGRAPH Asia 2026",
+    pub: "pdir",
+    poster: "assets/showcase/poster_siga2026_choi.jpg",
+    video: "assets/showcase/video_siga2026_choi.mp4",
+  },
+  {
     title: "Hyperspectral Polarimetric BRDFs",
     venue: "SIGGRAPH Asia 2025",
     pub: "hpbrdf",
     poster: "assets/showcase/poster_sigasia2025_moon.jpg",
     video: "assets/showcase/video_sigasia2025_moon.mp4",
+  },
+  {
+    title: "Real-world Polarimetric Environment Map Dataset",
+    venue: "SIGGRAPH Asia 2026",
+    pub: "penvmap",
+    poster: "assets/showcase/poster_siga2026_oh.jpg",
+    video: "assets/showcase/video_siga2026_oh.mp4",
   },
   {
     title: "Broadband Hyperspectral 3D Imaging",
