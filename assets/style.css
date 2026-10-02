@@ -150,9 +150,6 @@ header {
     font-weight: bold;
 }
 
-#cv-link[hidden] {
-    display: none;
-}
 
 .pill-sm {
     padding: 0.1rem 0.6rem;

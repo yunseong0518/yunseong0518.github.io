@@ -1,0 +1,156 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CV of Yunseong Moon -- kept in sync with https://yunseong0518.github.io
+% Class: cv.cls (Medium Length Professional CV, LaTeXTemplates.com)
+%
+% Compile with XeLaTeX (or Tectonic):  xelatex cv.tex   ->  cv.pdf
+% UTF-8 encoded.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{cv}
+
+\usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry}
+\usepackage{fontspec}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\setlist[itemize]{leftmargin=*, nosep}
+
+% Korean name: use Malgun Gothic on Windows, Noto Sans CJK KR elsewhere (e.g. Overleaf).
+\IfFontExistsTF{Malgun Gothic}
+  {\newfontfamily\hangulfont{Malgun Gothic}}
+  {\newfontfamily\hangulfont{Noto Sans CJK KR}}
+
+\newcommand{\me}{\textbf{Yunseong Moon}}
+% Keep hyphenated given names on one line (no "Seung-/Hwan" breaks).
+\newcommand{\nm}[1]{\mbox{#1}}
+
+% Numbered reference lists: [J1], [C1], [P1] ...
+\newlist{refs}{enumerate}{1}
+% Ragged-right so long author lists wrap at name boundaries instead of
+% overflowing or splitting a name.
+\setlist[refs]{leftmargin=2.7em, labelsep=0.5em, itemsep=4pt, topsep=2pt, before=\raggedright}
+
+\hypersetup{pdftitle={CV - Yunseong Moon}, pdfauthor={Yunseong Moon}}
+
+\name{Yunseong Moon ({\hangulfont 문윤성})}
+
+% cv.cls prints the address lines in the order 3rd, 1st, 2nd call, so the line
+% meant to appear first (affiliation) is given last.
+\address{
+\href{mailto:yunseong0518@postech.ac.kr}{yunseong0518@postech.ac.kr} \\
+\href{https://yunseong0518.github.io}{yunseong0518.github.io}
+}
+\address{
+\href{https://scholar.google.com/citations?user=YwKp8dIAAAAJ}{Google Scholar} \\
+\href{https://github.com/yunseong0518}{github.com/yunseong0518} \\
+\href{https://www.linkedin.com/in/yunseongmoon}{linkedin.com/in/yunseongmoon}
+}
+\address{
+Ph.D. Student, Computer Science and Engineering, POSTECH, Republic of Korea
+}
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Research Interests}
+\begin{itemize}
+\item Computational imaging: polarimetric and hyperspectral imaging systems
+\item Appearance acquisition and modeling (polarimetric/spectral BRDFs)
+\item Inverse rendering and 3D imaging
+\end{itemize}
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Education}
+
+{\bf Pohang University of Science and Technology (POSTECH)} \hfill {\em Feb 2024 -- Present}\\
+M.S.--Ph.D. Integrated Program, Computer Science and Engineering\\
+Computer Graphics Lab, Advisor: Prof. \href{https://www.shbaek.com}{Seung-Hwan Baek}
+
+{\bf Pohang University of Science and Technology (POSTECH)} \hfill {\em Feb 2019 -- Feb 2024}\\
+B.S., Computer Science and Engineering \hfill {\em Magna Cum Laude}
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Publications}
+{\small * Equal contribution}
+
+\textbf{Journal Papers}
+\begin{refs}[label={[J\arabic*]}]
+\item Seokjun Choi*, \me*, Kaizhang Kang, \nm{Hoon-Gyu Chung}, \nm{Jin-Nyeong Kim}, Giljoo Nam, \nm{Seung-Hwan Baek},
+\emph{Snapshot Polarimetric Display Inverse Rendering},
+\textbf{ACM Transactions on Graphics} (Proc.\ \textbf{SIGGRAPH Asia} 2026).
+\end{refs}
+
+\textbf{Conference Papers}
+\begin{refs}[label={[C\arabic*]}]
+\item Yonghee Oh, Ryota Maeda, \me, \nm{Seung-Hwan Baek},
+\emph{Real-world Polarimetric Environment Map Dataset},
+\textbf{SIGGRAPH Asia} 2026.
+
+\item Suhyun Shin, \me, Ryota Maeda, David B. Lindell, Kiriakos N. Kutulakos, \nm{Seung-Hwan Baek},
+\emph{Broadband Hyperspectral 3D Imaging under Dispersed Structured Light},
+\textbf{SIGGRAPH} 2026.
+
+\item \me, Ryota Maeda, Suhyun Shin, Inseung Hwang, Youngchan Kim, Min H. Kim, \nm{Seung-Hwan Baek},
+\emph{Hyperspectral Polarimetric BRDFs of Real-world Materials},
+\textbf{SIGGRAPH Asia} 2025.
+
+\item Ryota Maeda, \me, \nm{Seung-Hwan Baek},
+\emph{Event Ellipsometer: Event-based Mueller-Matrix Video Imaging},
+\textbf{CVPR} 2025, \textbf{Highlight}.
+
+\item Yujin Jeon*, Eunsue Choi*, Youngchan Kim, \me, Khalid Omer, Felix Heide, \nm{Seung-Hwan Baek},
+\emph{Spectral and Polarization Vision: Spectro-polarimetric Real-world Dataset},
+\textbf{CVPR} 2024, \textbf{Highlight}.
+\end{refs}
+
+\textbf{Posters}
+\begin{refs}[label={[P\arabic*]}]
+\item \nm{Oscar Pueyo-Ciutad}, \nm{Guillermo Enguita-Lahoz}, \me, Ryota Maeda, \nm{Seung-Hwan Baek}, \nm{Albert Redo-Sanchez}, Diego Gutierrez,
+\emph{Transient Polarimetry},
+\textbf{SIGGRAPH} 2026 Posters.
+\end{refs}
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Work Experience}
+\begin{itemize}
+\item Part-time Software Engineer, Sketchsoft Inc., Seoul, Republic of Korea \hfill {\em Sep 2022 -- Aug 2023}
+\item Full-time Software Engineer, Sketchsoft Inc., Seoul, Republic of Korea \hfill {\em Jan 2022 -- Jul 2022}
+\item Software Engineer Intern (Full-time), DEMO, Pohang, Republic of Korea \hfill {\em Dec 2020 -- Feb 2021}
+\end{itemize}
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Honors and Awards}
+\begin{itemize}
+\item BK21 Outstanding Paper Award (1st Prize) \hfill {\em Jan 2026}
+\end{itemize}
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Teaching Experience}
+\begin{itemize}
+\item Teaching Assistant, Youth AI$\cdot$Data Science Program -- Computer Vision \hfill {\em Nov -- Dec 2025}
+\item Teaching Assistant, CSED520: Computational Imaging, POSTECH \hfill {\em Sep -- Dec 2025}
+\item Teaching Assistant, POSCO AI Program -- Computer Vision \hfill {\em Jun 2024}
+\end{itemize}
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Professional Service}
+\begin{itemize}
+\item Reviewer: ACM Transactions on Graphics (TOG), IEEE Transactions on Visualization and Computer Graphics (TVCG), Asian Conference on Computer Vision (ACCV)
+\end{itemize}
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Patents}
+\begin{itemize}
+\item Method and Apparatus for 3D Modeling, Korea Patent No.\ 10-2023-0059316 \hfill {\em Registered May 2023}
+\end{itemize}
+\end{rSection}
+
+\end{document}
