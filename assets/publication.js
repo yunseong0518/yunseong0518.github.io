@@ -120,21 +120,16 @@ const publications = [
     const pubArray = document.getElementById('publication-array');
     publications.forEach(p => {
       const el = document.createElement('div');
-      el.className = 'publication-array';
+      // Own class: reusing the container's class made every card a 3-column grid too.
+      el.className = 'pub-card';
       if (p.id) el.id = 'pub-' + p.id;
       el.innerHTML = `
-        <div>
-          <div>
-            <div class="pub-card-photo">
-              <img src="${p.thumbnail}" alt="${altText(p)}" loading="lazy">
-            </div>
-            <div class="pub-card-text">
-              <div class="publication-title">${p.title}</div>
-              <div class="sub">${p.authors}</div>
-              <div class="publication-venue">${p.venue}</div>
-              ${renderLinks(p.links, p.id)}
-            </div>
-          </div>
+        <img class="pub-card-img" src="${p.thumbnail}" alt="${altText(p)}" loading="lazy">
+        <div class="pub-card-text">
+          <div class="publication-title">${p.title}</div>
+          <div class="sub">${p.authors}</div>
+          <div class="publication-venue">${p.venue}</div>
+          ${renderLinks(p.links, p.id)}
         </div>
       `;
       pubArray?.appendChild(el);
