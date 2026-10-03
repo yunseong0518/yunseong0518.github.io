@@ -68,7 +68,7 @@ const publications = [
     {
       id: "spectral",
       title: "Spectral and Polarization Vision: Spectro-polarimetric Real-world Dataset",
-      authors: "Yujin Jeon, Eunsue Choi, Youngchan Kim, <strong><u>Yunseong Moon</u></strong>, Khalid Omer, Felix Heide, Seung-Hwan Baek",
+      authors: "Yujin Jeon*, Eunsue Choi*, Youngchan Kim, <strong><u>Yunseong Moon</u></strong>, Khalid Omer, Felix Heide, Seung-Hwan Baek",
       venue: "CVPR 2024 (Highlight)",
       links: [
         { name: "Project", url: "https://eschoi.com/SPDataset/" },
