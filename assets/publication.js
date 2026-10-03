@@ -81,10 +81,11 @@ const publications = [
 
   // Links whose url is still a placeholder ("." or "") are not rendered, so an
   // unreleased paper/project page never shows up as a dead link.
-  function renderLinks(links) {
+  function renderLinks(links, paperId) {
     const real = links.filter(l => l.url && l.url !== '.');
     if (!real.length) return '';
-    return `<div class="publication-links">${real.map(l => `<a class="pill pill-sm" href="${l.url}">${l.name}</a>`).join('')}</div>`;
+    const track = l => `data-track="publication_click" data-track-paper="${paperId}" data-track-link-type="${l.name.toLowerCase()}"`;
+    return `<div class="publication-links">${real.map(l => `<a class="pill pill-sm" ${track(l)} href="${l.url}">${l.name}</a>`).join('')}</div>`;
   }
 
   // Plain-text title for alt attributes (authors carry <strong>/<u> markup).
@@ -107,7 +108,7 @@ const publications = [
             <div class="publication-title">${p.title}</div>
             <div class="sub">${p.authors}</div>
             <div class="publication-venue">${p.venue}</div>
-            ${renderLinks(p.links)}
+            ${renderLinks(p.links, p.id)}
           </div>
         </div>
       `;
@@ -131,7 +132,7 @@ const publications = [
               <div class="publication-title">${p.title}</div>
               <div class="sub">${p.authors}</div>
               <div class="publication-venue">${p.venue}</div>
-              ${renderLinks(p.links)}
+              ${renderLinks(p.links, p.id)}
             </div>
           </div>
         </div>

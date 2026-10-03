@@ -37,6 +37,7 @@
     </script>
 
     <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/analytics.js"></script>
     <script defer src="assets/showcase.js"></script>
     <script defer src="assets/news.js"></script>
     <script defer src="assets/publication.js"></script>
@@ -46,14 +47,6 @@
     <script defer src="assets/patent.js"></script>
     <script defer src="assets/service.js"></script>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPLGL3Y54Q"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-RPLGL3Y54Q');
-    </script>
 </head>
 <body>
     <header>
@@ -81,14 +74,14 @@
             </p>
             <p class="callout">I am looking for <strong>research internship</strong> opportunities. Feel free to reach out!</p>
             <div class="contact-links">
-                <a class="pill" id="cv-link" href="assets/cv.pdf" target="_blank" rel="noopener">
+                <a class="pill" id="cv-link" href="assets/cv.pdf" data-track="cv_open" data-track-location="hero" target="_blank" rel="noopener">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h9l5 5v15H6z M14 2v6h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>CV</a>
-                <a class="pill" href="mailto:yunseong0518@postech.ac.kr">
+                <a class="pill" data-track="contact_click" data-track-method="email" href="mailto:yunseong0518@postech.ac.kr">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5h20v14H2z" fill="none" stroke="currentColor" stroke-width="2"/><path d="m2 6 10 7 10-7" fill="none" stroke="currentColor" stroke-width="2"/></svg>Email</a>
-                <a class="pill" href="https://scholar.google.com/citations?user=YwKp8dIAAAAJ&hl=en">
+                <a class="pill" data-track="contact_click" data-track-method="scholar" href="https://scholar.google.com/citations?user=YwKp8dIAAAAJ&hl=en">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>Scholar</a>
-                <a class="pill" href="https://github.com/yunseong0518"><img src="assets/logo_github.png" alt="">GitHub</a>
-                <a class="pill" href="https://www.linkedin.com/in/yunseongmoon"><img src="assets/logo_linkedin.png" alt="">LinkedIn</a>
+                <a class="pill" data-track="contact_click" data-track-method="github" href="https://github.com/yunseong0518"><img src="assets/logo_github.png" alt="">GitHub</a>
+                <a class="pill" data-track="contact_click" data-track-method="linkedin" href="https://www.linkedin.com/in/yunseongmoon"><img src="assets/logo_linkedin.png" alt="">LinkedIn</a>
             </div>
             <p class="sub email-text">yunseong0518 [at] postech.ac.kr</p>
         </div>

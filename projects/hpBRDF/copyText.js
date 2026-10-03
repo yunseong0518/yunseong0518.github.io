@@ -70,6 +70,8 @@ function initCopyBlocks() {
     async function copy() {
       const ok = await writeClipboard(source.textContent.trim());
       feedback(ok);
+      // The page path identifies which paper; result shows if the copy worked.
+      if (window.track) track("bibtex_copy", { result: ok ? "copied" : "failed" });
     }
 
     el.addEventListener("click", copy);

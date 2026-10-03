@@ -210,7 +210,7 @@ function renderShowcase() {
     const b = document.createElement("button");
     b.type = "button";
     b.setAttribute("aria-label", `Show ${p.title}`);
-    b.addEventListener("click", () => goTo(i));
+    b.addEventListener("click", () => goTo(i, "dot"));
     dots.appendChild(b);
     return b;
   });
@@ -244,13 +244,25 @@ function renderShowcase() {
   function scheduleAuto() {
     clearTimeout(autoTimer);
     if (prefersReducedMotion || n < 2 || !onScreen || hovered || document.hidden) return;
-    autoTimer = setTimeout(() => goTo(current + 1), AUTO_ADVANCE_MS);
+    autoTimer = setTimeout(() => goTo(current + 1, "auto"), AUTO_ADVANCE_MS);
   }
 
-  function goTo(i) {
+  // Each project is reported once per page view, so the event count shows how
+  // far into the carousel visitors get (and whether by auto-advance or by hand).
+  const viewed = new Set();
+
+  function goTo(i, trigger) {
     const target = ((i % n) + n) % n;
     if (initialized && target !== current) slides[current].deactivate();
     current = target;
+    if (!viewed.has(current) && window.track) {
+      viewed.add(current);
+      track("showcase_view", {
+        project: showcaseProjects[current].pub,
+        position: current + 1,
+        trigger: trigger || "auto",
+      });
+    }
     slides[current].activate();
     slides[(current + 1) % n].preload(); // prefetch the likely-next slide
     viewport.href = "#pub-" + showcaseProjects[current].pub;
@@ -262,15 +274,16 @@ function renderShowcase() {
   // Clicking the clip jumps to (and highlights) the matching publication.
   viewport.addEventListener("click", (e) => {
     e.preventDefault();
+    if (window.track) track("showcase_click", { project: showcaseProjects[current].pub, position: current + 1 });
     goToPublication(showcaseProjects[current].pub);
   });
 
-  prevBtn.addEventListener("click", () => goTo(current - 1));
-  nextBtn.addEventListener("click", () => goTo(current + 1));
+  prevBtn.addEventListener("click", () => goTo(current - 1, "arrow"));
+  nextBtn.addEventListener("click", () => goTo(current + 1, "arrow"));
 
   root.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowLeft") { goTo(current - 1); e.preventDefault(); }
-    else if (e.key === "ArrowRight") { goTo(current + 1); e.preventDefault(); }
+    if (e.key === "ArrowLeft") { goTo(current - 1, "key"); e.preventDefault(); }
+    else if (e.key === "ArrowRight") { goTo(current + 1, "key"); e.preventDefault(); }
   });
 
   // Pause auto-advance while the user is interacting with the carousel.
@@ -291,7 +304,7 @@ function renderShowcase() {
     (entries) => {
       onScreen = entries[0].isIntersecting;
       if (onScreen) {
-        if (!initialized) { initialized = true; goTo(0); }
+        if (!initialized) { initialized = true; goTo(0, "initial"); }
         else { slides[current].activate(); scheduleAuto(); }
       } else {
         clearTimeout(autoTimer);
