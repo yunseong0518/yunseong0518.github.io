@@ -125,10 +125,10 @@ const publications = [
       el.innerHTML = `
         <div>
           <div>
-            <div style="min-width: 200px;">
-              <img src="${p.thumbnail}" alt="${altText(p)}" loading="lazy" style="width: 100%;">
+            <div class="pub-card-photo">
+              <img src="${p.thumbnail}" alt="${altText(p)}" loading="lazy">
             </div>
-            <div style="min-width: 250px;">
+            <div class="pub-card-text">
               <div class="publication-title">${p.title}</div>
               <div class="sub">${p.authors}</div>
               <div class="publication-venue">${p.venue}</div>

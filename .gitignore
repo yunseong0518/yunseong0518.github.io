@@ -1,0 +1,3 @@
+# Archived originals and source files: keep them locally, never publish them.
+# GitHub Pages serves every committed file, so anything here would be public.
+**/old/

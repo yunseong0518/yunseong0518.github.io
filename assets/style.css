@@ -422,3 +422,8 @@ video.showcase-frame {
     .carousel-slide,
     .showcase-frame { transition: none; }
 }
+
+/* Publications page cards (kept out of inline style= so the CSP can forbid inline styles). */
+.pub-card-photo { min-width: 200px; }
+.pub-card-photo img { width: 100%; }
+.pub-card-text { min-width: 250px; }
